@@ -1,0 +1,10 @@
+[Unit]
+Description=acerctrld
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/acerctrld
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
