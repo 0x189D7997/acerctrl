@@ -14,7 +14,7 @@ void printHelp() {
 	std::println("  set-battery-limits: set battery charging limits");
 	std::println("  --help:             show this help");
 	std::println("\n\nFunction Options:");
-	std::println("  set-rgb --device <keyboard, lid, profile_button> --effect <off, static, breathing, neon, wave, ripple, zoom, snake, disco> --brightness <0-100> --rgb <red 0-255> <green 0-255> <blue 0-255>");
+	std::println("  set-rgb --device <keyboard, lid, profile_button> --effect <off, static, breathing, neon, wave, ripple, zoom, snake, disco> --brightness <0-100> --rgb <red 0-255> <green 0-255> <blue 0-255> --zone <bitmask 0-15>");
 	std::println("  set-timeout <timeout in seconds>");
 	std::println("  set-usage-mode <0-5, 0 = turbo, 5 = eco+>");
 	std::println("  set-battery-limits: --status <0 = off, 1 = on> --lower <lower limit> --upper <upper limit>");
