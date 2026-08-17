@@ -60,7 +60,7 @@ namespace acerctrld {
     void usageModeRgbFlash(uint8_t mode) {
         if (usage_mode_colors.contains(mode)) {
             auto [r, g, b] = usage_mode_colors.at(mode);
-            acerhidrgb::rgbSet("keyboard", "mode_change", 100, 0, 0, r, g, b, 0x0F);
+            acerhidrgb::rgbSet("profile_button", "mode_change", 100, 0, 0, r, g, b, 0);
         }
     }
 
