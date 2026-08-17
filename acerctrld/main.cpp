@@ -209,6 +209,8 @@ namespace acerctrld {
 			std::string line;
 			while(std::getline(values_file, line)) {
 				handleCommand(line);
+				// delay is needed for subsequent RGB commands to work properly, otherwise the controller may randomly ignore some of them
+				usleep(1*1000*1000); // 1 second, derived experimentally
 			}
 		} else {
 			std::println("[ERR] Failed to open /var/lib/acerctrl/set_values!");
