@@ -13,6 +13,11 @@ Run `make` to build, then run `sudo make install` to install it. It will install
 Run `systemctl enable --now acerctrld.service` to start and enable the service at boot.\
 If you have a laptop that doesn't turn RGB off during suspend, copy `acer-sleep.sh` to `/usr/lib/systemd/system-sleep/`
 
+## How to Uninstall
+Stop the `acerctrld` daemon however it is done on your system. On systemd-based distros run `systemctl disable --now acerctrld.service`\
+Run `sudo make uninstall`\
+This should remove both the executable files and residual config.
+
 ## How to Use
 You can use `acerctrl-systray` for a system tray widget which provides a GUI.\
 `acerctrl-cli` can be used as follows:
