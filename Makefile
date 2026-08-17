@@ -17,8 +17,10 @@ install:
 
 .PHONY: uninstall
 uninstall:
-	@rm $(PREFIX)/lib/libAcerHIDHardware.so*
-	@rm $(PREFIX)/lib/libAcerHIDRGB.so*
-	@rm $(PREFIX)/bin/acerctrld
-	@rm $(PREFIX)/bin/acerctrl-cli
-	@rm /etc/systemd/system/acerctrld.service
+	@rm -f $(PREFIX)/lib/libAcerHIDHardware.so*
+	@rm -f $(PREFIX)/lib/libAcerHIDRGB.so*
+	@rm -f $(PREFIX)/bin/acerctrld
+	@rm -f $(PREFIX)/bin/acerctrl-cli
+	@rm -f $(PREFIX)/bin/acerctrl-systray
+	@rm -f /etc/systemd/system/acerctrld.service
+	@rm -fr /var/lib/acerctrl/
