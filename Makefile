@@ -8,7 +8,7 @@ all:
 .PHONY: clean
 clean:
 	@cmake --build build --target clean
-	@rm -r ./build
+	@rm -fr ./build
 
 .PHONY: install
 install:
