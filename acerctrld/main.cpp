@@ -37,6 +37,8 @@ namespace acerctrld {
 
     std::mutex values_file_mutex;
 
+	std::string last_button_rgb_command = "";
+
 	void saveValue(const std::string&);
     void loadLastValues();
 
@@ -93,6 +95,10 @@ namespace acerctrld {
             std::println("[ERR] Malformed RGB command!");
             return;
         }
+
+		if (device == "profile_button") {
+			last_button_rgb_command = cmd;
+		}
 
 		if (acerhidrgb::rgbSet(device, effect, brightness, speed, direction, r, g, b, zone)) {
 			saveValue(cmd);
@@ -297,6 +303,12 @@ namespace acerctrld {
 		for (;;) {
 			acerhidhw::waitForTurboButtonEvent();
 			cycleUsageModeAndRgb();
+
+			// mode change flash resets rgb state of the button, re-apply if one was set previously
+			if (last_button_rgb_command != "") {
+				usleep(1*000*000); // 1 second, sleeping this much is fine because the button takes more time to "recover" anyway
+				handleRgb(last_button_rgb_command, false);
+			}
 		}
 	}
 
