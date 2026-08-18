@@ -39,7 +39,7 @@ namespace acerctrld {
 
 	std::string last_button_rgb_command = "";
 
-    void handleRgb(const std::string&);
+    void handleRgb(const std::string&, bool);
 	void saveValue(const std::string&);
     void loadLastValues();
 
