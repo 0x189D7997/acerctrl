@@ -89,7 +89,7 @@ namespace acerctrld {
 	void cycleUsageModeAndRgb() {
 		uint8_t mode = acerhidhw::cycleUsageMode();
 
-        usageModeRgbFlash(mode);
+        usageModeRgbFlash(mode, true);
 
 		saveValue(std::format("SET_USAGE_MODE {:d}", mode));
 	}
