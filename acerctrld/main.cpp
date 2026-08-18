@@ -305,8 +305,8 @@ namespace acerctrld {
 			cycleUsageModeAndRgb();
 
 			// mode change flash resets rgb state of the button, re-apply if one was set previously
+			usleep(1650*1000); // 1650ms, required to avoid sending commands in quick succession, outside of if for consistent behavior, sleeping this much is fine because the button takes more time to "recover" anyway
 			if (last_button_rgb_command != "") {
-				usleep(1*000*000); // 1 second, sleeping this much is fine because the button takes more time to "recover" anyway
 				handleRgb(last_button_rgb_command, false);
 			}
 		}
